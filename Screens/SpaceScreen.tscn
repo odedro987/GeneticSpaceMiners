@@ -1,5 +1,20 @@
-[gd_scene format=2]
+[gd_scene load_steps=4 format=2]
 
-[node name="Space" type="Node" index="0"]
+[ext_resource path="res://Screens/SpaceScreen.gd" type="Script" id=1]
+[ext_resource path="res://Entities/Ore.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Entities/SpaceMiner.tscn" type="PackedScene" id=3]
+
+[node name="Space" type="Node"]
+
+script = ExtResource( 1 )
+
+[node name="Ore" parent="." index="0" instance=ExtResource( 2 )]
+
+position = Vector2( 418.659, 252.914 )
+type = 100
+
+[node name="SpaceMiner" parent="." index="1" instance=ExtResource( 3 )]
+
+position = Vector2( 266.455, 197.666 )
 
 

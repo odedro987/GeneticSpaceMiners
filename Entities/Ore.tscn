@@ -1,5 +1,16 @@
-[gd_scene format=2]
+[gd_scene load_steps=3 format=2]
 
-[node name="Ore" type="Node2D" index="0"]
+[ext_resource path="res://Entities/Ore.gd" type="Script" id=1]
+[ext_resource path="res://Assets/OreTemp.png" type="Texture" id=2]
+
+[node name="Ore" type="Node2D"]
+
+script = ExtResource( 1 )
+type = null
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Visibility" ]
 
 
