@@ -1,19 +1,26 @@
 extends Node2D
 
-enum OreType {
+enum ResourceType {
 	COPPER = 2,
 	IRON = 4,
 	GOLD = 8,
-	DIAMOND = 12,
-	SPACE_ROCK = 0
+	SPACE_ROCK = -2,
+	METAL_SCRAPE = -4
 }
 
-export(OreType) var type
+export(ResourceType) var type
 
 func _ready():
-	if(type == null): type = OreType.SPACE_ROCK
-	drawOre()
+	if(type == null): type = ResourceType.SPACE_ROCK
+	loadSprite()
 
-func drawOre():
-	get_node("Sprite").modulate = Color(1.0, 1.0, 1.0, 1.0)
-	get_node("Sprite").modulate = Color(type / 255.0, type / 255.0 * 10, type / 255.0, 1.0)
+func getSpriteByType():
+	if(type == ResourceType.COPPER): return "res://Assets/Copper.png"
+	elif(type == ResourceType.IRON): return "res://Assets/Iron.png"
+	elif(type == ResourceType.GOLD): return "res://Assets/Gold.png"
+	elif(type == ResourceType.SPACE_ROCK): return "res://Assets/SpaceRock.png"
+	elif(type == ResourceType.METAL_SCRAPE): return "res://Assets/MetalScrap.png"
+	else: return ""
+
+func loadSprite():
+	get_node("Sprite").texture = load(getSpriteByType())

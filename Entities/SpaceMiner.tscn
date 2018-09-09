@@ -13,7 +13,7 @@ extents = Vector2( 6, 6 )
 custom_solver_bias = 0.0
 extents = Vector2( 6, 6 )
 
-[node name="SpaceMiner" type="KinematicBody2D"]
+[node name="SpaceMiner" type="KinematicBody2D" index="0"]
 
 scale = Vector2( 2, 2 )
 input_pickable = false
